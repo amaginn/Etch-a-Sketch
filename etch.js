@@ -1,5 +1,17 @@
-let userInput = prompt('How many rows and columns would you like on your etch-a-sketch?')
+let userInput;
 
+// Prompt the user until a valid input is provided
+do {
+    userInput = prompt('How many rows and columns would you like on your etch-a-sketch? Enter a number between 1 and 100.');
+} while (!isValidInput(userInput));
+
+// Convert the input to a number
+userInput = parseInt(userInput);
+
+// Function to check if the input is valid
+function isValidInput(input) {
+    return !isNaN(input) && input >= 1 && input <= 100;
+}
 
 let manyBoxes = function() {
   // Loop for rows

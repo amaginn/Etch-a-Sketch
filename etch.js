@@ -27,13 +27,33 @@ let manyBoxes = function() {
 
   // color the grid
      let colorBox = function() {
+					if (isMouseDown) {
           let randomColor = Math.floor(Math.random()*16777215).toString(16);
             singleBox.style.backgroundColor = '#' + randomColor;
-            }
-             singleBox.addEventListener('mouseover', colorBox);
-        }
-  }  
-}
+					}
+        };
+        
+				singleBox.addEventListener('mouseover', colorBox);
+
+				         // Add mousedown event listener to each box individually
+								 singleBox.addEventListener('mousedown', function() {
+									isMouseDown = true;
+							});
+	
+							// Add mouseup event listener to each box individually
+							singleBox.addEventListener('mouseup', function() {
+									isMouseDown = false;
+							});
+	
+
+					let colorOnClick = function() {
+						let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+						singleBox.style.backgroundColor = '#' + randomColor;
+        };
+			singleBox.addEventListener('mouseDown', colorOnClick);
+  	}  
+	}
+};
 manyBoxes();
 
 

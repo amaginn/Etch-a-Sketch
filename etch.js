@@ -14,10 +14,6 @@ function updateMode(newMode) {
   currentMode = newMode;
 }
 
-function updateSize(newSize) {
-  currentSize = newSize;
-}
-
 const grid = document.querySelector('#grid');
 const colorButton = document.querySelector('#colorButton');
 const eraseButton = document.querySelector('#eraseButton');
@@ -28,7 +24,7 @@ const clearButton = document.querySelector('#clearButton')
 colorButton.onclick = () => updateMode('color');
 eraseButton.onclick = () => updateMode('erase');
 classicButton.onclick = () => updateMode('classic');
-clearButton.onclick = () => makeGrid();
+clearButton.onclick = () => makeGrid(25);
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -50,6 +46,7 @@ let makeGrid = function (userInput) {
       row.appendChild(singleBox);
     }
   }
+  activateButton(currentMode);
 };
 
 let colorBox = function (e) {
@@ -82,21 +79,42 @@ let updateGrid = function () {
 
 gridSelect.addEventListener('click', updateGrid);
 
-function activateButton(newMode) {
-  if (currentMode === 'color') {
-    colorButton.classList.remove('active');
-  } else if (currentMode === 'classic') {
-    classicButton.classList.remove('active');
-  } else if (currentMode === 'erase') {
-    eraseButton.classList.remove('active');
-  }
+colorButton.onclick = () => {
+  updateMode('color');
+  activateButton('color');
+};
 
-  if (newMode === 'color') {
-    colorButton.classList.add('active');
-  } else if (newMode === 'classic') {
-    classicButton.classList.add('active');
-  } else if (newMode === 'erase') {
-    eraseButton.classList.add('active');
+eraseButton.onclick = () => {
+  updateMode('erase');
+  activateButton('erase');
+};
+
+classicButton.onclick = () => {
+  updateMode('classic');
+  activateButton('classic');
+};
+
+clearButton.onclick = () => {
+  makeGrid(25);
+  updateMode('classic');
+  activateButton('classic');
+};
+
+gridSelect.addEventListener('click', () => {
+  updateGrid();
+  activateButton('classic');
+});
+
+activateButton(currentMode);
+
+function activateButton(newMode) {
+  const buttons = [colorButton, eraseButton, classicButton];
+
+  buttons.forEach(button => button.classList.remove('active'));
+
+  const clickedButton = document.querySelector(`#${newMode}Button`);
+  if (clickedButton) {
+    clickedButton.classList.add('active');
   }
 }
 

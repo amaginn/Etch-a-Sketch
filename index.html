@@ -5,10 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/pierce-jameson" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/pierce-jameson');
+    </style>
 </head>
 <body>
-    <h1>An Etch-a-Sketch by Alan Maginn</h1>
-    <div id="grid"></div>
+    <div class="redContainer">
+        <div class="header">
+            <h1 id="outsideHeaderLeft">The </h1>
+            <h1>  Etch A Sketch </h1>
+            <h1 id="outsideHeaderRight"> Animator</h1>
+        </div>
+    
+        <div id="gridContainer1">
+            <div id="gridContainer2">
+                <div id="grid"></div>
+            </div>
+        </div>
+
+    <div id ="buttons">
+       <img id="leftBlueButton" class="blueButton" src="Disc_Plain_navy_blue.svg.png" alt="blue dot">
+            <div id="redButtonsContainer">
+                <button id="gridSelect" class="redButtons">GRID SIZE</button>
+                <button id="colorButton" class="redButtons">COLOR</button>
+                <button id="classicButton" class="redButtons">CLASSIC</button>
+                <button id="eraseButton" class="redButtons">ERASER</button>
+                <button id="clearButton" class="redButtons">CLEAR</button>
+            </div>
+            <img id="rightBlueButton" class="blueButton" src="Disc_Plain_navy_blue.svg.png" alt="blue dot">
+        </div>
+
+    </div>
+
+    </div>
+    
+
     <script src="etch.js"></script>
 </body>
 </html>

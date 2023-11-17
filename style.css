@@ -4,30 +4,124 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 h1 {
-    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-family: 'Pierce Jameson', sans-serif;
+    margin: 20px;
+    margin-top: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;                                
+}
+
+#outsideHeaderLeft {
+    font-size: 22px;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    transform: rotate(-15deg);
+
+}
+
+#outsideHeaderRight {
+    font-size: 30px;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.redContainer {
+    display: flex;
+    flex-direction: column;
+    color: #CEAF87;
+    background-color:#ceb387 ;
+    text-align: center;
+    text-shadow: 1px 2px black;
+    width: 1000px;
+    height: 750px;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#gridContainer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    width: 700px;
+    background-color: #a0c0af;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#gridContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 650px;
+    background-color: #d0eadc;
 }
 
 #grid {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 0.25px solid black;
-    height: 600px;
+    border: 0.5px solid #d0eadc;
+    height: 400px;
     width: 600px;
-    max-height: 600px;
-    max-width: 600px;
+    max-height: 800px;
+    max-width: 800px;
+    background-color: #C2E5D3;
 }
 
 .row {
     display: flex;
-    border: .25px solid black;
+    border: 0.5px solid #d0eadc;
     flex-grow: 1;
 }
 
 .singleBox {
-    border: .25px solid black;
+    border: 0.5px solid #d0eadc;
     box-sizing: border-box;
     flex-grow: 1;
 }
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin: 20px;
+}
+.redButtons{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(184, 11, 11);
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 7px;
+    text-align: center;
+    margin: 10px;
+}
+.blueButton {
+    display: flex;
+    width: 100px;
+
+}
+
+.active {
+    background-color: white; 
+    color: red;
+  }

@@ -77,8 +77,6 @@ let updateGrid = function () {
   makeGrid(userInput);
 };
 
-gridSelect.addEventListener('click', updateGrid);
-
 colorButton.onclick = () => {
   updateMode('color');
   activateButton('color');
